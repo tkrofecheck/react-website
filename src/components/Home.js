@@ -1,12 +1,12 @@
 import React from 'react';
 import Data from '../data/home.json';
 import Figure from './Figure';
-import mugshot from '../img/mugshot.jpg';
+import mugshotSquare from '../img/mugshot-square.jpg';
 
 const Home = () => (
     <div className="home">
         <div className="container">
-            <Figure imgSrc={mugshot} />
+            <Figure className="home__figure" imgSrc={mugshotSquare} />
             <div className="home__bio">
                 {Data.bio}
             </div>

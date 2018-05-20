@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
 body {
   margin: 0;
   padding: 0;
-  border: 0; }
+  border: 0;
+  background-color: white; }
 
 a {
   color: green; }
@@ -12,13 +14,23 @@ figure {
     max-width: 100%;
     height: auto; }
 
-.site-wrap {
-  background-color: white;
-  font-size: 2rem; }
+ul {
+  list-style: none;
+  padding: 0; }
+  ul li {
+    list-style-type: none; }
+
+#site-wrap {
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px; }
 
 .container {
   display: grid;
-  grid-gap: 20px; }
+  grid-gap: 20px;
+  padding: 20px; }
 
 .home .container {
-  grid-template-columns: 1fr 2fr; }
+  grid-template-columns: 2fr 8fr; }
+
+.home__figure img {
+  border-radius: 100%; }

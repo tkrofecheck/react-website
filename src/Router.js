@@ -6,16 +6,16 @@ import Portfolio from './components/Portfolio';
 
 const Router = () => (
     <BrowserRouter>
-        <div>
+        <div className="router">
             <ul>
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link className="router__link" to="/">Home</Link>
                 </li>
                 <li>
-                    <Link to="/resume">Resume</Link>
+                    <Link className="router__link" to="/resume">Resume</Link>
                 </li>
                 <li>
-                    <Link to="/portfolio">Portfolio</Link>
+                    <Link className="router__link" to="/portfolio">Portfolio</Link>
                 </li>
             </ul>
 
