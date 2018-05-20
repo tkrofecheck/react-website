@@ -3,5 +3,22 @@ body {
   padding: 0;
   border: 0; }
 
-#root {
-  background-color: #ffffff; }
+a {
+  color: green; }
+
+figure {
+  margin: 0 0 1rem; }
+  figure img {
+    max-width: 100%;
+    height: auto; }
+
+.site-wrap {
+  background-color: white;
+  font-size: 2rem; }
+
+.container {
+  display: grid;
+  grid-gap: 20px; }
+
+.home .container {
+  grid-template-columns: 1fr 2fr; }
