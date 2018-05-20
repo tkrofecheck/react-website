@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand");
 body {
-  margin: 0;
-  padding: 0;
+  background-color: white;
   border: 0;
-  background-color: white; }
+  margin: 0;
+  padding: 0; }
 
 a {
   color: green; }
@@ -11,8 +11,8 @@ a {
 figure {
   margin: 0 0 1rem; }
   figure img {
-    max-width: 100%;
-    height: auto; }
+    height: auto;
+    max-width: 100%; }
 
 ul {
   list-style: none;
@@ -28,6 +28,22 @@ ul {
   display: grid;
   grid-gap: 20px;
   padding: 20px; }
+
+.router ul {
+  display: flex;
+  flex-direction: horizontal;
+  justify-content: space-between; }
+
+.router__link {
+  background-color: grey;
+  border-radius: 25px;
+  color: black;
+  padding: 5px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out; }
+  .router__link:hover {
+    background-color: green;
+    color: white; }
 
 .home .container {
   grid-template-columns: 2fr 8fr; }

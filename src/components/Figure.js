@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Figure = (props) => {
-    const { className, imgSrc, imgAlt } = props;
+    const {className, imgSrc, imgAlt} = props;
 
     return (
         <figure className={className}>

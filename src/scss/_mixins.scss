@@ -1,0 +1,8 @@
+@mixin circle {
+	border-radius: 100%;
+}
+
+@mixin display-grid {
+	display: grid;
+	grid-gap: 20px;
+}

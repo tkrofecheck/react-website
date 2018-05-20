@@ -1,0 +1,38 @@
+body {
+	background-color: $white;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: $green;
+}
+
+figure {
+	margin: 0 0 1rem;
+
+	img {
+		height: auto;
+		max-width: 100%;
+	}
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+
+	li {
+		list-style-type: none;
+	}
+}
+
+#site-wrap {
+	font-family: $font-quicksand;
+	font-size: $font-size-base;
+}
+
+.container {
+	@include display-grid;
+	padding: 20px;
+}

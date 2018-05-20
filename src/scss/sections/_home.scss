@@ -1,0 +1,9 @@
+.home {
+	.container {
+		grid-template-columns: 2fr 8fr;
+	}
+}
+
+.home__figure img {
+	@include circle;
+}
