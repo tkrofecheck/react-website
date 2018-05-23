@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Data from '../data/resume.json';
+import Section from './resume/Section';
 
-const Resume = () => (
-    <div>
-        <h2>Resume</h2>
-    </div>
-);
+export default class Resume extends Component {
+    constructor(props) {
+        super(props);
 
-export default Resume;
+        this.getSections = this.getSections.bind(this);
+    }
+
+    getSections() {
+        const sections = Data.sections;
+        
+        return sections.map((section, index) => {
+            return <Section key={index} {...section} />;
+        });
+    }
+
+    render() {
+        return (
+            <div className="resume">
+                {this.getSections()}
+            </div>
+        )
+    }
+}
