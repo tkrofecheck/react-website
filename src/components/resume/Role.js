@@ -4,7 +4,6 @@ const Role = (props) => {
     const { role } = props,
           { name, duration, items } = role;
 
-    console.log(items);
     return (
         <div className="resume__job__role">
             <div className="resume__job__role-name">{name}</div>
