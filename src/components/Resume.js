@@ -7,20 +7,35 @@ export default class Resume extends Component {
         super(props);
 
         this.getSections = this.getSections.bind(this);
+        
+        this.state = {
+            displaySections: []
+        }
+    }
+
+    componentDidMount() {
+        this.getSections();
     }
 
     getSections() {
-        const sections = Data.sections;
+        const sections = Data.sections,
+              displaySections = [];
         
-        return sections.map((section, index) => {
-            return <Section key={index} {...section} />;
+        sections.forEach((section, index) => {
+            if (section.display) {
+                displaySections.push(<Section key={index} {...section} />);
+            }
+        });
+
+        this.setState({
+            displaySections: displaySections
         });
     }
 
     render() {
         return (
             <div className="resume">
-                {this.getSections()}
+                {this.state.displaySections}
             </div>
         )
     }
