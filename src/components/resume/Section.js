@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import Job from './Job';
 import Degree from './Degree';
+import Skill from './Skill';
 
 export default class Section extends Component {
     constructor(props) {
         super(props);
 
         this.getJobs = this.getJobs.bind(this);
+        this.getEducation = this.getEducation.bind(this);
+        this.getSkills = this.getSkills.bind(this);
     }
     
     getJobs() {
@@ -48,17 +51,31 @@ export default class Section extends Component {
             )
         }
     }
+
+    getSkills() {
+        const { skills } = this.props;
+
+        if (skills !== undefined) {
+            return(
+                <ul className="resume__skills">
+                    {skills.map((skill, index) => {
+                        return <Skill key={index} value={skill} />;
+                    })}
+                </ul>
+            )
+        }
+    }
     
     render() {
-        const { display, name, text, jobs, college, types, sites, title, url } = this.props;
-        const classNames = display ? 'hidden' : '';
+        const { display, name, text } = this.props;
         
         return (
-            <section className={classNames}>
+            <section className={display ? '' : 'hidden'}>
                 {name}
                 {text}
                 {this.getJobs()}
                 {this.getEducation()}
+                {this.getSkills()}
             </section>
         )
     }
