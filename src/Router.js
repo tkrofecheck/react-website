@@ -3,20 +3,27 @@ import {BrowserRouter, Route, Link} from 'react-router-dom'
 import Home from './components/Home';
 import Resume from './components/Resume';
 import Portfolio from './components/Portfolio';
+import Data from './data/router.json';
 
 const Router = () => (
     <BrowserRouter>
         <div className="router">
             <ul>
-                <li>
-                    <Link className="router__link" to="/">Home</Link>
-                </li>
-                <li>
-                    <Link className="router__link" to="/resume">Resume</Link>
-                </li>
-                <li>
-                    <Link className="router__link" to="/portfolio">Portfolio</Link>
-                </li>
+                {Data.links.map((link, index) => {
+                    const { router_link, icon, url, name } = link;
+
+                    return (
+                        <li key={index} data-icon={icon}>
+                            {(() => {
+                                if (router_link) {
+                                    return <Link className="router__link" to={url}>{name}</Link>;
+                                } else {
+                                    return <a href={url}>{name}</a>;
+                                }
+                            })()}
+                        </li>
+                    )
+                })}
             </ul>
 
             <hr/>
