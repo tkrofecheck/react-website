@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Company from './Company';
 import City from './City';
 import Role from './Role';
