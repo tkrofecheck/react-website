@@ -1,5 +1,4 @@
 import React from 'react';
-import { binaryStringToBlob, createObjectURL } from 'blob-util';
 
 const Project = (props) => {
     const { name, images } = props;
