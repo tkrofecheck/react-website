@@ -28,7 +28,6 @@ class Experience extends Component {
     }
 
     render() {
-        console.log('company', this.props.company);
         const { company } = this.props,
                 { city, companyName, display, jobs, state } = company;
         

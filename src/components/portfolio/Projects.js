@@ -1,14 +1,28 @@
 import React, { Component } from 'react';
 import { compose, graphql } from 'react-apollo';
 import GetCompanyProjects from '../../graphql/getCompanyProjects';
+import Project from './Project';
 
 class Projects extends Component {
     static defaultProps = {
         company: {}
     }
-    
+
     constructor(props) {
         super(props);
+
+        this.getProjects = this.getProjects.bind(this);
+    }
+
+    getProjects(projects) {
+        if (projects !== undefined && projects.edges !== undefined && projects.edges.length) {
+            const { projectName } = projects.aggregations.max,
+                  { images } = projects.edges[0].node;
+            
+            if (images.edges.length) {
+                return <Project name={projectName} images={images.edges} />;
+            }
+        }
     }
 
     render() {
@@ -17,9 +31,13 @@ class Projects extends Component {
 
         return (
             <div className="project">
-                <div className="project_company">
+                <div className="project__company">
                     {companyName}
                 </div>
+                <hr />
+                <ul className="project__images">
+                    {this.getProjects(projects)}
+                </ul>
             </div>
         );
     }
