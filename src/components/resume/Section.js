@@ -1,9 +1,20 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Job from './Job';
 import Degree from './Degree';
 import Skill from './Skill';
+import { compose, graphql } from 'react-apollo';
+import GetCompany from '../../graphql/getCompany';
+import GetCollege from '../../graphql/getCollege';
 
-export default class Section extends Component {
+class Section extends Component {
+    static defaultProps = {
+        company: {
+            display: false
+        },
+        college: {},
+        skills: []
+    }
+    
     constructor(props) {
         super(props);
 
@@ -11,18 +22,12 @@ export default class Section extends Component {
         this.getEducation = this.getEducation.bind(this);
         this.getSkills = this.getSkills.bind(this);
     }
-    
-    getJobs() {
-        const { jobs } = this.props;
 
-        if (jobs !== undefined) {
-            return(
-                <div className="resume__jobs">
-                    {jobs.map((job, index) => {
-                        return <Job key={index} {...job} />;
-                    })}
-                </div>
-            )
+    getJobs() {
+        const { company } = this.props;
+
+        if (company !== undefined) {
+            console.log('company', company);
         }
     }
 
@@ -30,25 +35,7 @@ export default class Section extends Component {
         const { college } = this.props;
 
         if (college !== undefined) {
-            const { name, city, degrees } = college;
-
-            return(
-                <div className="resume_education">
-                    <div className="resume_education-school">
-                        <div className="name">
-                            {name}
-                        </div>
-                        <div className="city">
-                            {city}
-                        </div>
-                        <div className="degree">
-                            {degrees.map((degree, index) => {
-                                return <Degree key={index} {...degree} />;
-                            })}
-                        </div>
-                    </div>
-                </div>
-            )
+            console.log('college', college);
         }
     }
 
@@ -56,23 +43,14 @@ export default class Section extends Component {
         const { skills } = this.props;
 
         if (skills !== undefined) {
-            return(
-                <ul className="resume__skills">
-                    {skills.map((skill, index) => {
-                        return <Skill key={index} value={skill} />;
-                    })}
-                </ul>
-            )
+            console.log('skills', skills);
         }
     }
-    
+
     render() {
-        const { display, name, text } = this.props;
-        
+        console.log('this.props', this.props);
         return (
-            <section className={display ? '' : 'hidden'}>
-                {name}
-                {text}
+            <section>
                 {this.getJobs()}
                 {this.getEducation()}
                 {this.getSkills()}
@@ -80,3 +58,34 @@ export default class Section extends Component {
         )
     }
 }
+
+const companyQueryOptions = {
+    options({companyId}) {
+        return {
+            variables: {
+                id: companyId
+            }
+        };
+    },
+    props: ({data: { getCompany : company }}) => ({
+        company
+    })
+};
+
+const collegeQueryOptions = {
+    options() {
+        return {
+            variables: {
+                id: "Q29sbGVnZTox"
+            }
+        };
+    },
+    props: ({data: { getCollege : college }}) => ({
+        college
+    })
+};
+
+export default compose(
+    graphql(GetCompany, companyQueryOptions),
+    graphql(GetCollege, collegeQueryOptions)
+)(Section);
