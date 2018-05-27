@@ -14,7 +14,7 @@ const Project = (props) => {
                     
                     return (
                         <li key={index}>
-                            <img src={blobUrl} alt={name + ' image-' + index} />
+                            <img src={blobUrl} alt={name + ' image-' + index} data-mimetype={blobMimeType} />
                         </li>
                     );
                 })}
