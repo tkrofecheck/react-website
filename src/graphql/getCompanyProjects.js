@@ -1,20 +1,10 @@
 import { gql } from 'apollo-boost';
 
 // $where = {"jobCompany": { "companyName": { "eq": "Time Inc."}}}
-const GetCompany = gql`query ($id: ID!) {
+const GetCompanyProjects = gql`query ($id: ID!) {
   getCompany(id: $id) {
     display
     companyName
-    city
-    state
-    jobs {
-      edges {
-        node {
-          jobTitle
-          jobRole
-        }
-      }
-    }
     projects {
       aggregations {
         max {
@@ -37,4 +27,4 @@ const GetCompany = gql`query ($id: ID!) {
   }
 }`;
 
-export default GetCompany;
+export default GetCompanyProjects;

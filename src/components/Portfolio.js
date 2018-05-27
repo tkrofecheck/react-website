@@ -1,9 +1,15 @@
 import React from 'react';
+import { companyIds } from '../globals/constants';
+import Projects from './portfolio/Projects';
 
-const Portfolio = () => (
-    <div>
-        <h2>Portfolio</h2>
-    </div>
-);
+const Portfolio = () => {
+    return (
+        <div className="portfolio">
+            {companyIds.map((id, index) => {
+                return <Projects key={index} companyId={id} />;
+            })}
+        </div>
+    )
+};
 
 export default Portfolio;

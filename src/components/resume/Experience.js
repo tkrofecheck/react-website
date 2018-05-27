@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { compose, graphql } from 'react-apollo';
-import GetCompany from '../../graphql/getCompany';
+import GetCompanyJobs from '../../graphql/getCompanyJobs';
 
 import Address from './Address';
 import Job from './Job';
@@ -49,7 +49,7 @@ class Experience extends Component {
 }
 
 export default compose(
-    graphql(GetCompany, {
+    graphql(GetCompanyJobs, {
         options({companyId}) {
             return {
                 variables: {
