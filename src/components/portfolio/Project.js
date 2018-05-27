@@ -6,7 +6,7 @@ const Project = (props) => {
     return (
         <div className="project">
             <div className="project__name">
-                {name}
+                Projects:{' ' + name}
             </div>
             <ul className="project__images">
                 {images.map((image, index) => {
