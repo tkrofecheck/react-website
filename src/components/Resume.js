@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
-import Section from './resume/Section';
+import Experience from './resume/Experience';
+import Education from './resume/Education';
 
 export default class Resume extends Component {
     constructor(props) {
         super(props);
 
-        this.getSections = this.getSections.bind(this);
-        
-        this.state = {
-            displaySections: []
-        }
+        this.getExperience = this.getExperience.bind(this);
+        this.getEducation = this.getEducation.bind(this);
     }
 
-    componentDidMount() {
-        this.getSections();
-    }
-
-    getSections() {
+    getExperience() {
         const companyIds = [
             'Q29tcGFueTo2',
             'Q29tcGFueTo1',
@@ -27,16 +21,21 @@ export default class Resume extends Component {
         ];
 
         return companyIds.map((id, index) => {
-            return (
-                <Section key={index} companyId={id} />
-            )
+            return <Experience key={index} name="experience" companyId={id} />;
         });
+    }
+
+    getEducation() {
+        const id = "Q29sbGVnZTox";
+
+        return <Education collegeId={id} />;
     }
 
     render() {
         return (
             <div className="resume">
-                {this.getSections()}
+                {this.getExperience()}
+                {this.getEducation()}
             </div>
         )
     }
