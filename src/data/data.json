@@ -1,0 +1,46 @@
+{
+    "bio": {
+        "name": "Tim Krofecheck",
+        "title": "Frontend Web Developer",
+        "text": "Tim is a seasoned Web Developer with 13 years professional experience. Currently he lives in Queens, NY and is working for WebMD as Senior Web Developer since May 2015. Technologies Tim has used at WebMD include HTML5, CSS3, Vanilla JavaScript, Node.js NPM, Grunt, RequireJS, SCSS, jQuery, Handlebars, Omniture (BI) and Akamai AMP Premier. Prior to WebMD, Tim worked at Time Inc as an HTML5 developer utilizing HTML5, CSS3, Vanilla JavaScript, Backbone.js, Handlebars, Underscore.js and Adobe DPS for developing webview storefronts on the iPad, iPhone and Kindle Fire. Tim has also upheld several development roles at the New York Post (Web Developer for 2 years) and at Acxiom Digital (Content Specialist and Solutions Developer for 5 years). While working full-time, Tim has worked as a Freelancer and Contractor on weekends and weeknights to improve his skillset."
+    },
+    "router": {
+        "links": [
+            {
+                "router_link": false,
+                "className": "",
+                "icon": "",
+                "name": "Github",
+                "url": "http://www.github.com/tkrofecheck"
+            },
+            {
+                "router_link": false,
+                "className": "",
+                "icon": "",
+                "name": "LinkedIn",
+                "url": "http://www.linkedin.com/in/tkrofecheck"
+            },
+            {
+                "router_link": true,
+                "className": "",
+                "icon": "",
+                "name": "Home",
+                "url": "/"
+            },
+            {
+                "router_link": true,
+                "className": "",
+                "icon": "",
+                "name": "Resume",
+                "url": "/resume"
+            },
+            {
+                "router_link": true,
+                "className": "",
+                "icon": "",
+                "name": "Portfolio",
+                "url": "/portfolio"
+            }
+        ]
+    }
+}
