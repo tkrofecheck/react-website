@@ -49,7 +49,8 @@ export default compose(
             return {
                 variables: {
                     id: companyId
-                }
+                },
+                fetchPolicy: 'cache-and-network',
             };
         },
         props: ({data: { getCompany : company }}) => ({
