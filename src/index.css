@@ -14,6 +14,10 @@ figure {
     height: auto;
     max-width: 100%; }
 
+h1 {
+  padding: 0;
+  margin: 0; }
+
 ul {
   list-style: none;
   padding: 0; }
@@ -24,29 +28,43 @@ ul {
   font-family: "Quicksand", sans-serif;
   font-size: 16px; }
 
-.container {
-  display: grid;
-  grid-gap: 20px;
-  padding: 20px; }
-
 .router ul {
   display: flex;
   flex-direction: horizontal;
   justify-content: space-between; }
 
-.router__link {
+.router__link:not(.image) {
   background-color: grey;
   border-radius: 25px;
   color: black;
   padding: 5px;
   text-decoration: none;
   transition: all 0.2s ease-in-out; }
-  .router__link:hover {
+  .router__link:not(.image):hover {
     background-color: green;
     color: white; }
 
-.home .container {
-  grid-template-columns: 2fr 8fr; }
+.bio .container {
+  padding: 20px; }
+  @media (min-width: 768px) {
+    .bio .container {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: 1fr;
+      grid-template-columns: 2fr 10fr;
+      grid-template-areas: "header text" "header text";
+      padding: 0; } }
 
-.home__figure img {
-  border-radius: 100%; }
+.bio__header {
+  grid-area: header;
+  padding: 10px; }
+
+.bio__header-name {
+  display: block; }
+
+.bio__header-title {
+  display: block; }
+
+.bio-text {
+  grid-area: text;
+  padding: 10px; }

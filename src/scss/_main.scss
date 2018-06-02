@@ -18,6 +18,11 @@ figure {
 	}
 }
 
+h1 {
+	padding: 0;
+    margin: 0;
+}
+
 ul {
 	list-style: none;
 	padding: 0;
@@ -30,9 +35,4 @@ ul {
 #site-wrap {
 	font-family: $font-quicksand;
 	font-size: $font-size-base;
-}
-
-.container {
-	@include display-grid;
-	padding: 20px;
 }
