@@ -1,7 +1,7 @@
 import { gql } from 'apollo-boost';
 
 // $where = {"jobCompany": { "companyName": { "eq": "Time Inc."}}}
-const GetCompanyJobs = gql`query ($id: ID!) {
+const GetCompanyJobs = gql`query CompanyJobs($id: ID!) {
   getCompany(id: $id) {
     display
     companyName
