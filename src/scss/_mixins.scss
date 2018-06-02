@@ -4,5 +4,34 @@
 
 @mixin display-grid {
 	display: grid;
-	grid-gap: 20px;
+}
+
+@mixin media-breakpoint-up($point) {
+	$bp-xsmall: '(min-width: 320px)';
+	$bp-small: '(min-width: 481px)';
+	$bp-medium: '(min-width: 768px)';
+	$bp-large: '(min-width: 1250px)';
+	$bp-xlarge: '(min-width: 1600px)';
+
+	@if $point == xs {
+		@media #{$bp-xsmall} {
+			@content;
+		}
+	} @else if $point == sm {
+		@media #{$bp-small} {
+			@content;
+		}
+	} @else if $point == md {
+		@media #{$bp-medium} {
+			@content;
+		}
+	} @else if $point == lg {
+		@media #{$bp-large} {
+			@content;
+		}
+	} @else if $point == xl {
+		@media #{$bp-xlarge} {
+			@content;
+		}
+	}
 }

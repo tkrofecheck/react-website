@@ -1,0 +1,31 @@
+.bio {
+	.container {
+		padding: 20px;
+
+		@include media-breakpoint-up(md) {
+			@include display-grid;
+			grid-gap: 20px;
+			grid-template-columns: 1fr;
+			grid-template-columns: 2fr 10fr;
+			grid-template-areas: "header text" "header text";
+			padding: 0;
+		}
+	}
+}
+
+.bio__header {
+	grid-area: header;
+	padding: 10px;
+}
+.bio__header-name {
+	display: block;
+}
+
+.bio__header-title {
+	display: block;
+}
+
+.bio-text {
+	grid-area: text;
+	padding: 10px;
+}
